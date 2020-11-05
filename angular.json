@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hero"
+    }
+  },
+  "defaultProject": "hero",
+  "cli": {
+    "analytics": false
+  }
 }

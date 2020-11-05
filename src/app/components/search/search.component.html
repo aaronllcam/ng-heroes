@@ -1,0 +1,20 @@
+
+<div *ngIf="heroes.length == 0" class="alert alert-danger" role="alert">
+    <h4>No se ha encontrado ningún Heroe para la búsqueda {{ searchValue }}</h4>
+</div>
+
+<div *ngIf="heroes.length !== 0" class="animated fadeIn">
+    <h1 class="my-3">Heroes search</h1>
+    <hr>
+    <div class="card-columns">
+        <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let idx = index">
+            <img [src]="hero.img" class="card-img-top" [alt]="hero.name">
+            <div class="card-body">
+                <h5 class="card-title">{{ hero.nombre }}</h5>
+                <p class="card-text">{{ hero.bio }}</p>
+                <p class="card-text"><small class="text-muted">{{ hero.aparicion }}</small></p>
+                <button class="btn btn-outline-primary btn-block" (click)="showHero(idx)">See more!</button>
+            </div>
+        </div>
+    </div>
+</div>

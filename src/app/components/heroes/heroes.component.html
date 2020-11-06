@@ -1,14 +1,5 @@
 <h1 class="my-3">Heroes list</h1>
 <hr>
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let idx = index">
-        <img [src]="hero.img" class="card-img-top" [alt]="hero.name">
-        <div class="card-body">
-            <h5 class="card-title">{{ hero.nombre }}</h5>
-            <p class="card-text">{{ hero.bio }}</p>
-            <p class="card-text"><small class="text-muted">{{ hero.aparicion }}</small></p>
-            <button class="btn btn-outline-primary btn-block" (click)="showHero(idx)">See more!</button>
-            <!-- <a [routerLink]="['/hero', idx]" class="btn btn-outline-primary d-block">Watch more!</a> -->
-        </div>
-    </div>
+    <app-hero-card (selectedHero)="showHero( $event )" [hero]="heroo" [index]="idx" *ngFor="let heroo of heroes; let idx = index"></app-hero-card>
 </div>
